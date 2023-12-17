@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!--========== HTML META TAGS ===========-->
     <title>Register | PisoNet</title>
 
     <!--========== FAVICON ===========-->
@@ -28,6 +27,7 @@
     <!--========== CSS ===========-->
     <link rel="preload" href="../css/style.min.css" as="style" />
     <link rel="stylesheet" href="../css/style.min.css" />
+  
   </head>
   <body>
    
@@ -90,6 +90,9 @@
        </nav>
      </header>
  
+  <!-- ====== CHANGE LOGIN BUTTON TO USER NAME ====== -->
+  <script src = "/assets/js/login-name.js"></script>
+  
   <!--========== MAIN ===========-->
   <main class="main container">
       
@@ -160,48 +163,66 @@
       <section class="contact_form">
         <h2>Register an account</h2>
         <p class="contact_form-subtitle">
-          Register an account to be able to login to the website.
+            Register an account to be able to log in to the website.
         </p>
-
-          <div class="form_email">
+    
+        <div class="form_email">
             <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="Email"
-              placeholder="Your@email.com"
-              required
-            />
-          </div>
-
-          <div class="form_email">
+            <input type="email" id="email" name="Email" placeholder="Your@email.com" required />
+        </div>
+    
+        <div class="form_email">
             <label for="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Name"
-              required
-            />
-          </div>
-
-          <div class="form_email">
+            <input type="text" id="name" name="name" placeholder="Name" required />
+        </div>
+    
+        <div class="form_email">
             <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="Password"
-              placeholder="Password"
-              required
-            />
-          </div>
-
-          <a href = "/index.html"><button>Register</button></a>
+            <input type="password" id="password" name="Password" placeholder="Password" required />
+        </div>
+    
+        <button onclick="registerUser()">Register</button>
         <br><br>
-        <p> Already has an account? <a href = "/assets/html/login.html">Login</a></p>
-      </section>
-    </div>
+        <p>Already have an account? <a href="/assets/html/login.html">Login</a></p>
+    </section>
   </main>
+
+  <script>
+    function registerUser() {
+      const email = document.getElementById("email").value;
+      const name = document.getElementById("name").value;
+      const password = document.getElementById("password").value;
+  
+      // Password complexity regex pattern
+      const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+  
+      // Check if the password meets the complexity requirements
+      if (!passwordPattern.test(password)) {
+        alert("Password does not meet the complexity requirements. \n \nMUST CONTAIN: \n◉ 6 Characters+ \n◉ 1 Capital Letter  \n◉ 1 Small Letter \n◉ 1 Symbol and; \n◉ 1 Number");
+        return;
+      }
+  
+      // Get existing users from localStorage or initialize an empty array
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+  
+      // Check if the email is already registered
+      if (users.some((user) => user.email === email)) {
+        alert("Email already registered");
+      } else {
+        // Add the new user to the array
+        users.push({ email, name, password });
+  
+        // Save the updated user array to localStorage
+        localStorage.setItem("users", JSON.stringify(users));
+  
+        // Display registration success message
+        alert("Registration successful");
+  
+        // Redirect to another page (e.g., login.html)
+        window.location.href = "/assets/html/login.html";
+      }
+    }
+  </script>  
 
     <!--========== FOOTER ===========-->
     <hr class="hr_footer" />

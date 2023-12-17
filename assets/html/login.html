@@ -89,7 +89,10 @@
          </div>
        </nav>
      </header>
- 
+     
+  <!-- ====== CHANGE LOGIN BUTTON TO USER NAME ====== -->
+ <script src = "/assets/js/login-name.js"></script>
+
   <!--========== MAIN ===========-->
   <main class="main container">
       
@@ -156,42 +159,45 @@
         </div>
       </section>
 
-       <!-- ====== LOGIN FORM ====== -->
+          <!-- ====== LOGIN FORM ====== -->
+          <section class="contact_form">
+            <h2>Use your account</h2>
+            <p class="contact_form-subtitle">
+              Log onto the website to make use of other features.
+            </p>
 
-      <section class="contact_form">
-        <h2>Use your account</h2>
-        <p class="contact_form-subtitle">
-          Log onto the website to make use of other features.
-        </p>
+            <div class="form_email">
+              <label for="login-email">Email</label>
+              <input
+                type="email"
+                id="login-email"
+                name="Email"
+                placeholder="Your@email.com"
+                required
+              />
+            </div>
 
-          <div class="form_email">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="Email"
-              placeholder="Your@email.com"
-              required
-            />
-          </div>
+            <div class="form_email">
+              <label for="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                name="Password"
+                placeholder="Password"
+                required
+              />
+            </div>
 
-          <div class="form_email">
-            <label for="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="Password"
-              placeholder="Password"
-              required
-            />
-          </div>
-
-          <a href = "/index.html"><button>Login</button></a>
-        <br><br>
-        <p> Doesn't have an account yet? <a href = "/assets/html/register.html">Register</a></p>
-      </section>
-    </div>
-  </main>
+            <button onclick="loginUser()">Login</button>
+            <br /><br />
+            <p>
+              Doesn't have an account yet?
+              <a href="/assets/html/register.html">Register</a>
+            </p>
+          </section>
+        </section>
+      </div>
+    </main>
 
     <!--========== FOOTER ===========-->
     <hr class="hr_footer" />

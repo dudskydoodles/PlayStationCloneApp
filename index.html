@@ -35,58 +35,63 @@
     var audio = document.getElementById("bg-music");
     audio.volume = 0.1;
    </script>
+ <!--========== HEADER ===========-->
+ <header class="header" id="header">
+  <nav class="nav container">
+    <div class="nav_box">
+      <a href="/index.html" class="nav_logo">
+        <img
+          src="/assets/svg/logo.svg"
+          width="44"
+          height="41"
+          alt="PlayStation Logo"
+        />
+        PisoNetStation
+      </a>
+    </div>
+    <div class="nav_menu" id="nav-menu">
+      <ul class="nav_list">
+        <li class="nav_item">
+          <a href="/index.html" class="nav_link">Home</a>
+        </li>
+        <li class="nav_item">
+          <a href="/assets/html/controllers.html" class="nav_link"
+            >About</a
+          >
+        </li>
+        <li class="nav_item">
+          <a href="/assets/html/produts.html" class="nav_link">Products</a>
+        </li>
+        <li class="nav_item">
+          <a href="/index.html#faqs" class="nav_link">FAQs</a>
+        </li>
+        <li class="nav_item">
+          <a href="/assets/html/contact.html" class="nav_link">Contact</a>
+        </li>
+        <li class="nav_item">
+          <a href="/assets/html/login.html" class="nav_link">Login</a>
+        </li>
+      </ul>
 
-    <!--========== HEADER ===========-->
-    <header class="header" id="header">
-      <nav class="nav container">
-        <div class="nav_box">
-          <a href="./index.html" class="nav_logo">
-            <img
-              src="./assets/svg/logo.svg"
-              width="44"
-              height="41"
-              alt="PlayStation Logo"
-            />
-            PisoNetStation
-          </a>
-        </div>
-        <div class="nav_menu" id="nav-menu">
-          <ul class="nav_list">
-            <li class="nav_item">
-              <a href="#home" class="nav_link">Home</a>
-            </li>
-            <li class="nav_item">
-              <a href="./assets/html/controllers.html" class="nav_link"
-                >About</a
-              >
-            </li>
-            <li class="nav_item">
-              <a href="./assets/html/produts.html" class="nav_link">Products</a>
-            </li>
-            <li class="nav_item">
-              <a href="#faqs" class="nav_link">FAQs</a>
-            </li>
-            <li class="nav_item">
-              <a href="./assets/html/contact.html" class="nav_link">Contact</a>
-            </li>
-            <li class="nav_item">
-              <a href="./assets/html/login.html" class="nav_link">Login</a>
-            </li>
-          </ul>
+      <div class="nav_close" id="nav-close">
+        <i class="bx bx-x"></i>
+      </div>
+    </div>
 
-          <div class="nav_close" id="nav-close">
-            <i class="bx bx-x"></i>
-          </div>
-        </div>
+    <div class="nav_btns">
+      <i class="bx bx-moon change-theme" id="theme-button"></i>
+      <div class="nav_toggle" id="nav-toggle">
+        <i class="bx bx-menu"></i>
+      </div>
+    </div>
+  </nav>
+</header>
 
-        <div class="nav_btns">
-          <i class="bx bx-moon change-theme" id="theme-button"></i>
-          <div class="nav_toggle" id="nav-toggle">
-            <i class="bx bx-menu"></i>
-          </div>
-        </div>
-      </nav>
-    </header>
+<!-- ====== CHANGE LOGIN BUTTON TO USER NAME ====== -->
+<script src = "/assets/js/login-name.js"></script>
+
+  <!-- ====== CHANGE LOGIN BUTTON TO USER NAME ====== -->
+  <script src = "./assets/js/login-name.js"></script>
 
     <!--========== PRELOADER ===========-->
     <section class="screen_loading flex_center flex_column">
